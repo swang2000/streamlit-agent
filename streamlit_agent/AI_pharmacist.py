@@ -1,3 +1,8 @@
+""" 
+This version, I started to build a markdown page to specilize in AI Pharmacist - DMI
+
+"""
+
 import os
 import tempfile
 import streamlit as st
@@ -36,7 +41,7 @@ MODEL_NAME = os.getenv('MODEL_NAME')
 
 
 
-st.set_page_config(page_title="LangChain: Chat with Documents", page_icon="🦜")
+st.set_page_config(page_title="DMI - AI Pharmacist", page_icon="🦜")
 st.markdown("<h2 style='text-align: center; color: green;'>AI Pharmachist Demo Using RAG", unsafe_allow_html=True)
 st.markdown('''
 ### Your AI Pharmacist - DMI  
@@ -45,7 +50,7 @@ I am your AI Pharmacist (Persona can be changed based on customer type and choic
 
 
 
-@st.cache_resource(ttl="1h")
+@st.cache_resource(ttl="1d")
 def configure_retriever(uploaded_files):
     # Read documents
     docs = []
