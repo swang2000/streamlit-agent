@@ -37,7 +37,12 @@ MODEL_NAME = os.getenv('MODEL_NAME')
 
 
 st.set_page_config(page_title="LangChain: Chat with Documents", page_icon="🦜")
-st.title("🦜 LangChain: Chat with Documents")
+st.markdown("<h2 style='text-align: center; color: green;'>AI Pharmachist Demo Using RAG", unsafe_allow_html=True)
+st.markdown('''
+### Your AI Pharmacist - DMI  
+I am your AI Pharmacist (Persona can be changed based on customer type and choice). With speciality in drug **:blue[Stelara/Ustekinumab]**, I am here intended to answer any of your question or concerns about this drug. 
+''')
+
 
 
 @st.cache_resource(ttl="1h")
@@ -65,7 +70,7 @@ def configure_retriever(uploaded_files):
     vectordb = DocArrayInMemorySearch.from_documents(splits, embeddings)
 
     # Define retriever
-    retriever = vectordb.as_retriever(search_type="mmr", search_kwargs={"k": 2, "fetch_k": 4})
+    retriever = vectordb.as_retriever(search_type="mmr", search_kwargs={"k": 4, "fetch_k": 4})
 
     return retriever
 

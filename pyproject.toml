@@ -21,11 +21,15 @@ langchain-experimental = "^0.0.10"
 streamlit = ">=1.26"
 docarray = "^0.38.0"
 hnswlib = "^0.7.0"
+python-dotenv = "^1.0.0"
+pypdf2 = "^3.0.0"
+
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
 mypy = "^1.4.1"
 pre-commit = "^3.3.3"
+
 
 [build-system]
 requires = ["poetry-core"]
